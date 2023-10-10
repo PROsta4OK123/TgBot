@@ -14,11 +14,11 @@ public class WorkDay {
     }
 
     @Id
-    @Column(name = "work_day_id")
+    @Column()
     @GeneratedValue(generator = "increment")
     private Long id;
 
     @Column
     @NonNull
-    private String lessonName;
+    private String dayName;
 }

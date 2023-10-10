@@ -14,7 +14,7 @@ public class Lesson {
     }
 
     @Id
-    @Column(name = "lesson_id")
+    @Column
     @GeneratedValue(generator = "increment")
     private Long lessonId;
 

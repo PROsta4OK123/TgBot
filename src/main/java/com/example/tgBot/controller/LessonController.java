@@ -1,7 +1,7 @@
 package com.example.tgBot.controller;
 
 import com.example.tgBot.entity.Lesson;
-import com.example.tgBot.service.dataWebService.LessonService;
+import com.example.tgBot.service.LessonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,9 +18,5 @@ public class LessonController {
     @GetMapping("/get-lessons")
     public List<Lesson> getLessons(){
         return lessonService.getLessons();
-    }
-    @PostMapping("/add-lesson")
-    public void addLesson(@RequestBody Lesson lesson){
-        lessonService.addLesson(lesson);
     }
 }

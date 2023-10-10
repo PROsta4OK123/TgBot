@@ -2,10 +2,12 @@ package com.example.tgBot.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 
 @AllArgsConstructor
 @Entity
 @Table
+@Data
 public class WorkDayMatching {
     public WorkDayMatching() {
     }

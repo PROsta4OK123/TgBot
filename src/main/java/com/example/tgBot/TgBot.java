@@ -5,15 +5,19 @@ import com.example.tgBot.models.UserRequest;
 import com.example.tgBot.models.UserSession;
 import com.example.tgBot.sender.BotSender;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.objects.Update;
+
+import java.util.logging.Logger;
 
 import static com.example.tgBot.TgBotApplication.logger;
 
 @Slf4j
 @Component
 public class TgBot extends TelegramLongPollingBot {
+
 
     private String botToken = "6677821227:AAGEDJXhWAk5mkgGMd5mkQ_SVUp29wvVR0E";
 

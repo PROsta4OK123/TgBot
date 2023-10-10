@@ -11,5 +11,4 @@ public final class UserSession {
     private String lesson;
     private String text;
     private ConversationStatus status;
-
 }
