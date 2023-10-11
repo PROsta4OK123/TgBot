@@ -21,7 +21,7 @@ public class ChangeLessonHomeworkHandler extends UserRequestHandler{
         this.keyboardHelper = keyboardHelper;
         this.userSessionService = userSessionService;
     }
-    private final String command = "/Change";
+    private final String command = "/change";
     private final TelegramService telegramService;
     private final KeyboardHelper keyboardHelper;
     private final UserSessionService userSessionService;

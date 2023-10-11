@@ -13,7 +13,7 @@ import static com.example.tgBot.TgBotApplication.logger;
 
 @Component
 public class GetTimetableRequestHandler extends UserRequestHandler {
-    private final String command = "/Gethomework";
+    private final String command = "/gethomework";
     private final WorkDayMatchingService workDayMatchingService;
     private final TelegramService telegramService;
 

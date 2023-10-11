@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  mysql-backendBd:
+    image: mysql:5.7
+    restart: always
+    environment:
+      - "MYSQL_ROOT_PASSWORD=1234567890"
+      - "MYSQL_DATABASE=rozklad"
+      - "MYSQL_USER=sammy"
+      - "MYSQL_PASSWORD=password"
+    networks:
+      rozklad:
+  app:
+    image:  "tg-bot"
+    ports:
+      - 8080:8080
+    networks:
+      - rozklad
+    restart: always
+
+networks:
+  rozklad:
