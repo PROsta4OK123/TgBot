@@ -2,7 +2,6 @@ package com.example.tgBot.service;
 
 import com.example.tgBot.entity.Lesson;
 import com.example.tgBot.repository.LessonRepository;
-import com.example.tgBot.repository.LessonRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,8 +10,11 @@ import java.util.List;
 
 @Service
 public class LessonService {
+    private final LessonRepository repo;
     @Autowired
-    private LessonRepository repo;
+    public LessonService(LessonRepository repo) {
+        this.repo = repo;
+    }
 
     public List<Lesson> getLessons() {
         return repo.findAll();

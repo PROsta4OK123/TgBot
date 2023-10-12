@@ -3,22 +3,22 @@ package com.example.tgBot.service;
 
 import com.example.tgBot.entity.Lesson;
 import com.example.tgBot.entity.WorkDayMatching;
-import com.example.tgBot.repository.LessonRepository;
 import com.example.tgBot.repository.WorkDayMatchingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 @Service
 @Component
 public class WorkDayMatchingService {
+    private WorkDayMatchingRepository workDayMatchingRepository;
     @Autowired
-    WorkDayMatchingRepository workDayMatchingRepository;
+    public WorkDayMatchingService(WorkDayMatchingRepository workDayMatchingRepository) {
+        this.workDayMatchingRepository = workDayMatchingRepository;
+    }
 
     public String getTimetable(Long dayOfWeek){
         String message;
