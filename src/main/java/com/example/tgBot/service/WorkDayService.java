@@ -21,4 +21,7 @@ public class WorkDayService {
     public List<WorkDay> getWorkDays(){
         return repository.findAll();
     }
+    public void deleteDay(Long id){
+        repository.deleteById(id);
+    }
 }

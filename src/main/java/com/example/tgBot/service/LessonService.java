@@ -23,6 +23,9 @@ public class LessonService {
     public List<Lesson> getLessons() {
         return repo.findAll();
     }
+    public void deleteLesson(Long id){
+        repo.deleteById(id);
+    }
     @Transactional
     public void updateLessonHomework(String hw, String lesson) {
         Lesson lesson1 = repo.findByLessonName(lesson);

@@ -2,9 +2,7 @@ package com.example.tgBot.controller;
 
 import com.example.tgBot.entity.WorkDay;
 import com.example.tgBot.service.WorkDayService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,7 +18,11 @@ public class WorkDayController {
         return workDayService.getWorkDays();
     }
     @PostMapping("/add-work-day")
-    public void addWorkDay(WorkDay workDay){
+    public void addWorkDay(@RequestBody WorkDay workDay){
         workDayService.addWorkDay(workDay);
+    }
+    @DeleteMapping("/delete-work-day/{id}")
+    public void deleteWorkDay(@PathVariable Long id){
+        workDayService.deleteDay(id);
     }
 }

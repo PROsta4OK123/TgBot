@@ -3,10 +3,7 @@ package com.example.tgBot.controller;
 import com.example.tgBot.entity.Lesson;
 import com.example.tgBot.service.LessonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,7 +17,12 @@ public class LessonController {
         return lessonService.getLessons();
     }
     @PostMapping("/add-lesson")
-    public void addLesson(Lesson lesson){
+    public void addLesson(@RequestBody Lesson lesson){
         lessonService.addLesson(lesson);
     }
+    @DeleteMapping("/delete-lesson/{id}")
+    public void deleteById(@PathVariable Long id){
+        lessonService.deleteLesson(id);
+    }
+
 }

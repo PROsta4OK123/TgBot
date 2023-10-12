@@ -22,7 +22,7 @@ public class WorkDayMatchingService {
     public void addWorkDayMatching(WorkDayMatching workDayMatching){
         workDayMatchingRepository.save(workDayMatching);
     }
-    public List<WorkDayMatching> getWorkDayCatchings(){
+    public List<WorkDayMatching> getWorkDayMatchings(){
         return workDayMatchingRepository.findAll();
     }
 
