@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories("com.example.TgBot.repository")
-@EnableAutoConfiguration
-@ComponentScan
+@ComponentScan("com/example/tgBot")
 public class DataConfig {
 }

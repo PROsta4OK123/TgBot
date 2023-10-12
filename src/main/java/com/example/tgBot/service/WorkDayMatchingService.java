@@ -14,14 +14,13 @@ import java.util.List;
 @Service
 @Component
 public class WorkDayMatchingService {
-    private WorkDayMatchingRepository workDayMatchingRepository;
+    private final WorkDayMatchingRepository workDayMatchingRepository;
     @Autowired
     public WorkDayMatchingService(WorkDayMatchingRepository workDayMatchingRepository) {
         this.workDayMatchingRepository = workDayMatchingRepository;
     }
 
     public String getTimetable(Long dayOfWeek){
-        String message;
         if (dayOfWeek <= 6L){
             List<Lesson> lessons = workDayMatchingRepository.findAllByWorkDayId(dayOfWeek).stream()
                     .map(WorkDayMatching::getLesson)
