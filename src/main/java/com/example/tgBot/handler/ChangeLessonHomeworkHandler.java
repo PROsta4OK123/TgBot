@@ -34,7 +34,7 @@ public class ChangeLessonHomeworkHandler extends UserRequestHandler{
     public void handle(UserRequest dispatchRequest) {
         Long chatId = dispatchRequest.getChatID();
         ReplyKeyboardMarkup replyKeyboardMarkup = keyboardHelper.getLessonButton();
-        telegramService.sendMessage(chatId,"test",replyKeyboardMarkup);
+        telegramService.sendMessage(chatId,"Оберіть урок для зміни",replyKeyboardMarkup);
 
         UserSession userSession = dispatchRequest.getUserSession();
         userSession.setStatus(ConversationStatus.WAITING_LESSON);
