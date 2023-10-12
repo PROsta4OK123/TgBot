@@ -19,6 +19,12 @@ public class WorkDayMatchingService {
     public WorkDayMatchingService(WorkDayMatchingRepository workDayMatchingRepository) {
         this.workDayMatchingRepository = workDayMatchingRepository;
     }
+    public void addWorkDayMatching(WorkDayMatching workDayMatching){
+        workDayMatchingRepository.save(workDayMatching);
+    }
+    public List<WorkDayMatching> getWorkDayCatchings(){
+        return workDayMatchingRepository.findAll();
+    }
 
     public String getTimetable(Long dayOfWeek){
         if (dayOfWeek <= 6L){

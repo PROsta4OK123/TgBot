@@ -19,4 +19,8 @@ public class LessonController {
     public List<Lesson> getLessons(){
         return lessonService.getLessons();
     }
+    @PostMapping("/add-lesson")
+    public void addLesson(Lesson lesson){
+        lessonService.addLesson(lesson);
+    }
 }
