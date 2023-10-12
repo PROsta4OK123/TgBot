@@ -8,6 +8,9 @@ public abstract class UserRequestHandler {
     public abstract void handle(UserRequest dispatchRequest);
     public abstract boolean isGlobal();
 
+    public boolean isCallbackQuery(Update update){
+        return update.hasCallbackQuery();
+    }
     public boolean isCommand(Update update, String command) {
         return update.hasMessage() && update.getMessage().isCommand()
                 && update.getMessage().getText().equals(command);

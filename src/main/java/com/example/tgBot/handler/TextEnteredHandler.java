@@ -28,8 +28,8 @@ public class TextEnteredHandler extends UserRequestHandler{
 
     @Override
     public void handle(UserRequest dispatchRequest) {
-        Long chayId = dispatchRequest.getChatID();
-        telegramService.sendMessage(chayId,"Домашнє завдання додано");
+        Long chatId = dispatchRequest.getChatID();
+        telegramService.sendMessage(chatId,"Домашнє завдання додано");
 
         UserSession userSession = dispatchRequest.getUserSession();
         lessonService.updateLessonHomework(dispatchRequest.getUpdate().getMessage().getText(),  userSession.getLesson());

@@ -27,18 +27,16 @@ public class WorkDayMatchingService {
     }
 
     public String getTimetable(Long dayOfWeek){
-        if (dayOfWeek <= 6L){
+        if (dayOfWeek < 6){
             List<Lesson> lessons = workDayMatchingRepository.findAllByWorkDayId(dayOfWeek).stream()
                     .map(WorkDayMatching::getLesson)
                     .toList();
             List<String> timetableAsList = lessons.stream()
                     .map(s -> s.getLessonName() + ", " + s.getHomework())
                     .toList();
-            System.out.println(timetableAsList.get(0));
             return getMessage(timetableAsList);
         }else {
-            dayOfWeek = 1L;
-            return getTimetable(dayOfWeek);
+            return getTimetable(1L);
         }
     }
     private String getMessage(List<String> timetableAsList){

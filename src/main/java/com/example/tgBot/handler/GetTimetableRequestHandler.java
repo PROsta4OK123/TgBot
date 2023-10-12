@@ -14,6 +14,7 @@ import static com.example.tgBot.TgBotApplication.logger;
 @Component
 public class GetTimetableRequestHandler extends UserRequestHandler {
     private final String command = "/gethomework";
+    private final String commandInChat = "/gethomework@Rozklad_domashka_bot";
     private final WorkDayMatchingService workDayMatchingService;
     private final TelegramService telegramService;
 
@@ -25,16 +26,25 @@ public class GetTimetableRequestHandler extends UserRequestHandler {
 
     @Override
     public boolean isApplicable(UserRequest request) {
-        return isCommand(request.getUpdate(),command);
+        return isCommand(request.getUpdate(), isChatCommand(request));
     }
 
     @Override
     public void handle(UserRequest dispatchRequest) {
         Long chatId = dispatchRequest.getChatID();
-        UserSession userSession =dispatchRequest.getUserSession();
-        String  message = workDayMatchingService.getTimetable((long) LocalDate.now().getDayOfWeek().getValue() + 1);
-        telegramService.sendMessage(chatId,message);
+        UserSession userSession = dispatchRequest.getUserSession();
+        System.out.println((long) LocalDate.now().getDayOfWeek().getValue() + 1);
+        String message = workDayMatchingService.getTimetable((long) LocalDate.now().getDayOfWeek().getValue() + 1);
+        telegramService.sendMessage(chatId, message);
         logger.info("request to " + dispatchRequest.getChatID() + ", " + message);
+    }
+
+    private String isChatCommand(UserRequest request) {
+        if (isCommand(request.getUpdate(), command)) {
+            return command;
+        } else {
+            return commandInChat;
+        }
     }
 
     @Override

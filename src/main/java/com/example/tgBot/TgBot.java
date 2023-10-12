@@ -1,5 +1,6 @@
 package com.example.tgBot;
 
+import com.example.tgBot.enums.ConversationStatus;
 import com.example.tgBot.service.UserSessionService;
 import com.example.tgBot.models.UserRequest;
 import com.example.tgBot.models.UserSession;
@@ -43,6 +44,29 @@ public class TgBot extends TelegramLongPollingBot {
 
             Long chatId = update.getMessage().getChatId();
             UserSession session = userSessionService.getSession(chatId);
+
+            UserRequest userRequest = UserRequest
+                    .builder()
+                    .update(update)
+                    .userSession(session)
+                    .chatID(chatId)
+                    .build();
+
+            boolean dispatched = dispatcher.dispatch(userRequest);
+
+            if (!dispatched) {
+                logger.warn("Unexpected update from user");
+            }
+        } else if (update.hasCallbackQuery()) {
+            Long userId = update.getCallbackQuery().getFrom().getId();
+            String userFirstName = update.getCallbackQuery().getFrom().getFirstName();
+            String textFromUser = update.getCallbackQuery().getData();
+            Long chatId = update.getCallbackQuery().getMessage().getChatId();
+            UserSession session = userSessionService.getSession(chatId);
+            ConversationStatus conversationStatus = session.getStatus();
+
+            logger.info("[{}, {}, {}] : {}", userId, userFirstName, textFromUser, conversationStatus);
+
 
             UserRequest userRequest = UserRequest
                     .builder()
