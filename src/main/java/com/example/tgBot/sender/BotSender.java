@@ -8,7 +8,7 @@ import org.telegram.telegrambots.bots.DefaultBotOptions;
 @Slf4j
 @Component
 public class BotSender extends DefaultAbsSender {
-    private String botToken = "6677821227:AAGEDJXhWAk5mkgGMd5mkQ_SVUp29wvVR0E";
+    private String botToken = "6477147253:AAFC-vEyC69vCgRp6d3LnxQlq_hYYnHdIZU";
 
     public BotSender() {
         super(new DefaultBotOptions());

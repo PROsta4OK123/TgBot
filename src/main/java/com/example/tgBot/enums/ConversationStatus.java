@@ -3,6 +3,8 @@ package com.example.tgBot.enums;
 public enum ConversationStatus {
     CONVERSATION_STARTED,
     WAITING_LESSON,
-    WAITING_FOR_TEXT
-
+    WAITING_FOR_TEXT,
+    WAITING_FOR_CUSTOM_LESSON,
+    ADDING_CUSTOM_LESSONS_IN_PROGRESS,
+    ADDING_CUSTOM_LESSON_COMPLETE
 }

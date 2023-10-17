@@ -1,6 +1,7 @@
-package com.example.tgBot.handler;
+package com.example.tgBot.handler.timetableHandler;
 
 import com.example.tgBot.enums.ConversationStatus;
+import com.example.tgBot.handler.UserRequestHandler;
 import com.example.tgBot.models.UserRequest;
 import com.example.tgBot.models.UserSession;
 import com.example.tgBot.service.LessonService;
@@ -9,7 +10,7 @@ import com.example.tgBot.service.UserSessionService;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TextEnteredHandler extends UserRequestHandler{
+public class TextEnteredHandler extends UserRequestHandler {
     private final TelegramService telegramService;
     private final LessonService lessonService;
     private final UserSessionService userSessionService;

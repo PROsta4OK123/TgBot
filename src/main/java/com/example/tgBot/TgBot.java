@@ -20,9 +20,9 @@ import static com.example.tgBot.TgBotApplication.logger;
 public class TgBot extends TelegramLongPollingBot {
 
 
-    private String botToken = "6677821227:AAGEDJXhWAk5mkgGMd5mkQ_SVUp29wvVR0E";
+    private String botToken = "6477147253:AAFC-vEyC69vCgRp6d3LnxQlq_hYYnHdIZU";
 
-    private String botUsername = "Rozklad\\domashka_bot";
+    private String botUsername = "rozklad-testBot";
 
     public TgBot(Dispatcher dispatcher, UserSessionService userSessionService) {
         this.dispatcher = dispatcher;

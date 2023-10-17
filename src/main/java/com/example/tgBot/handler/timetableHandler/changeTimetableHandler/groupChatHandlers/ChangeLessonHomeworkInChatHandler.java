@@ -1,6 +1,7 @@
-package com.example.tgBot.handler;
+package com.example.tgBot.handler.timetableHandler.changeTimetableHandler.groupChatHandlers;
 
 import com.example.tgBot.enums.ConversationStatus;
+import com.example.tgBot.handler.UserRequestHandler;
 import com.example.tgBot.models.UserRequest;
 import com.example.tgBot.models.UserSession;
 import com.example.tgBot.repository.LessonRepository;
@@ -10,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ChangeLessonHomeworkInChatHandler extends UserRequestHandler{
+public class ChangeLessonHomeworkInChatHandler extends UserRequestHandler {
     private final LessonRepository lessonRepository;
     private final TelegramService telegramService;
     private final UserSessionService userSessionService;

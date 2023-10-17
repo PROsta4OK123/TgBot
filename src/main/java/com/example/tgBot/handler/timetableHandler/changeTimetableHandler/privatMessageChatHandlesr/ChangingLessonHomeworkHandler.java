@@ -1,6 +1,7 @@
-package com.example.tgBot.handler;
+package com.example.tgBot.handler.timetableHandler.changeTimetableHandler.privatMessageChatHandlesr;
 
 import com.example.tgBot.enums.ConversationStatus;
+import com.example.tgBot.handler.UserRequestHandler;
 import com.example.tgBot.models.UserRequest;
 import com.example.tgBot.models.UserSession;
 import com.example.tgBot.repository.LessonRepository;

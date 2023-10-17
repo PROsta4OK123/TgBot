@@ -1,5 +1,6 @@
-package com.example.tgBot.handler;
+package com.example.tgBot.handler.timetableHandler;
 
+import com.example.tgBot.handler.UserRequestHandler;
 import com.example.tgBot.models.UserRequest;
 import com.example.tgBot.models.UserSession;
 import com.example.tgBot.service.TelegramService;

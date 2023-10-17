@@ -1,12 +1,13 @@
-package com.example.tgBot.handler;
+package com.example.tgBot.handler.timetableHandler;
 
+import com.example.tgBot.handler.UserRequestHandler;
 import com.example.tgBot.service.TelegramService;
 import com.example.tgBot.models.UserRequest;
 import org.springframework.stereotype.Component;
 import static com.example.tgBot.TgBotApplication.logger;
 
 @Component
-public class StartRequestHandler extends UserRequestHandler{
+public class StartRequestHandler extends UserRequestHandler {
     public StartRequestHandler(TelegramService telegramService) {
         this.telegramService = telegramService;
     }
