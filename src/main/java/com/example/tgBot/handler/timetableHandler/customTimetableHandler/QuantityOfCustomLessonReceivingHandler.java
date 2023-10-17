@@ -26,8 +26,8 @@ public class QuantityOfCustomLessonReceivingHandler extends UserRequestHandler {
 
     @Override
     public boolean isApplicable(UserRequest request) {
-        String groupChatCommand = "/getCustomTimetable@Rozklad_domashka_bot";
-        String pmCommand = "/getCustomTimetable";
+        String groupChatCommand = "/getcustomhw@Rozklad_domashka_bot";
+        String pmCommand = "/getcustomhw";
         return isCommand(request.getUpdate(), pmCommand) || isCommand(request.getUpdate(), groupChatCommand);
     }
 
