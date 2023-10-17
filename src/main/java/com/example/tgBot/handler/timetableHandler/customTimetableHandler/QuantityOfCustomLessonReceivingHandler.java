@@ -39,7 +39,7 @@ public class QuantityOfCustomLessonReceivingHandler extends UserRequestHandler {
 
         InlineKeyboardMarkup replyKeyboardMarkup = keyboardHelper.getQuantityOfLessonsButtons();
 
-        telegramService.sendMessage(chatId,message,replyKeyboardMarkup);
+        telegramService.sendMessageWithGettingId(chatId,message,replyKeyboardMarkup,userSession);
         logger.info("request to " + dispatchRequest.getChatID() + ", " + message);
 
         userSession.setStatus(ConversationStatus.WAITING_FOR_CUSTOM_LESSON);

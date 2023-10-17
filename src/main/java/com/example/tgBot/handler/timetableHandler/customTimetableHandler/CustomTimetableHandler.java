@@ -34,6 +34,8 @@ public class CustomTimetableHandler extends UserRequestHandler {
         Long chatId = dispatchRequest.getChatID();
         UserSession userSession = dispatchRequest.getUserSession();
 
+        telegramService.deleteMessage(chatId,userSession.getMessageId());
+
         dispatchRequest.getUserSession().getCustomTimetable().setQuantityOfLessons(Integer.parseInt(dispatchRequest.getUpdate().getCallbackQuery().getData()));
         InlineKeyboardMarkup inlineKeyboardMarkup = keyboardHelper.getLessonsInChat();
         String message = "Тицяй по кніпочкам, щоб обрати уроки, які хочеш отримати";
